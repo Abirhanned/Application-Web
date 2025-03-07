@@ -1,0 +1,39 @@
+; Test des instructions arithmétiques immédiates
+ADDi R0, R1, 5     
+ANDi R4, R5, 1      
+ORi R6, R7, 15     
+XORi R0, R1, 255    
+SLi R2, R3, 2       
+SRi R4, R5, 3      
+MULi R6, R7, 8      
+
+; Test des instructions arithmétiques non immédiates
+ADD R0, R1, R2      
+SUB R3, R4, R5      
+AND R6, R7, R0     
+OR R1, R2, R3    
+XOR R4, R5, R6      
+SL R7, R0, R1       
+SR R2, R3, R4      
+MUL R5, R6, R7      
+
+; Test des instructions de mémoire
+LD R0, R1           
+STR R2, R3        
+
+; Test des instructions CALL et RET
+START:    ADD R1, R2, R3         ; Addition (R1 = R2 + R3)
+          CALL FUNC_A            ; Appel à la sous-routine FUNC_A
+          SUB R4, R1, R2         ; Soustraction après retour (R4 = R1 - R2)
+          CALL FUNC_B            ; Appel à une autre sous-routine FUNC_B
+          HALT                    ; Arrêt du processeur
+
+; Sous-routine FUNC_A
+FUNC_A:   ADDi R5, R0, 10        ; Charger une valeur immédiate (R5 = 10)
+          MUL R6, R5, R2         ; Multiplication (R6 = R5 * R2)
+          RET                     ; Retour à l'instruction après le premier CALL
+
+; Sous-routine FUNC_B
+FUNC_B:   ADDi R5, R0, 20        ; Charger une autre valeur immédiate (R5 = 20)
+          MUL R6, R5, R2         ; Multiplication (R6 = R5 * R2)
+          RET                     ; Retour à l'instruction après le deuxième CALL
