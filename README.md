@@ -64,10 +64,10 @@ Un script Python a été utilisé pour convertir un code assembleur en binaire c
 ---
 
 ## Auteurs
-- **Abir Hanned **
+- **Abir Hanned**
 - **Ashley PADAYODI**
 - **Chafae QALLOUJ**
-- **Nawal EL KHAL **
+- **Nawal EL KHAL**
 
 Projet réalisé dans le cadre de l'étude des architectures de processeurs.
 
